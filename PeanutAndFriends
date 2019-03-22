@@ -1,0 +1,44 @@
+public class DogClubHouse
+    {
+        DogsFriendGroup dfg = new DogsFriendGroup();
+        Dog Peanut;
+        Dog Fifi;
+        Dog Bigi;
+        Dog Clarence;
+        Dog Roy;
+
+        public void Run()
+        {
+            Peanut = new Dog();
+            Fifi = new Dog();
+            Clarence = new Dog();
+            Peanut.Friend = Fifi;
+            Peanut.Frenemy = Clarence;
+            dfg.FindFriendWithBirthday(Peanut);
+        }
+    }
+
+    public class Dog
+    {
+        public string DogName;
+        public bool isBirthday;
+        public int DogAge;
+        public Dog Friend;
+        // A "frenemy" is a friend who will say mean things 
+        // about you when you are not around
+        public Dog Frenemy;
+    }
+
+    public class DogsFriendGroup
+    {
+        public void FindFriendWithBirthday(Dog ThisDog)
+        {
+            if (ThisDog.isBirthday)
+            {
+                Console.WriteLine("HAPPY!!! It is {0}'s Birthday! ", ThisDog.DogName);
+                return;
+            }
+            // to do: traverse over Friends
+            // to do: recurse over Frenemies
+        }
+    } 
